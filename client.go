@@ -31,7 +31,7 @@ func listener(client net.Conn) {
 func sender(client net.Conn, nickname string, reader *bufio.Reader) {
 	for true {
 		message, _ := reader.ReadString('\n')
-		if strings.TrimSpace(message) == "kapat" || strings.TrimSpace(message) == "çık" || strings.TrimSpace(message) == "exit" || strings.TrimSpace(message) == "ben mal bir orospu evladıyım" {
+		if strings.TrimSpace(message) == "kapat" || strings.TrimSpace(message) == "çık" || strings.TrimSpace(message) == "exit" {
 			client.Close()
 			break
 		} else if strings.TrimSpace(message) != "" {
